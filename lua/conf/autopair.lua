@@ -1,7 +1,5 @@
-
 local status_ok, npairs = pcall(require, "nvim-autopairs")
 if not status_ok then
-  vim.notify("autopairs not found!")
   return
 end
 
@@ -12,7 +10,7 @@ npairs.setup {
     javascript = { "string", "template_string" },
     java = false,
   },
-  disable_filetype = { "TelescopePrompt", "spectre_panel", "dap-repl", "guihua", "guihua_rust", "clap_input" },
+  disable_filetype = { "TelescopePrompt"},
   fast_wrap = {
     map = "<M-e>",
     chars = { "{", "[", "(", '"', "'" },

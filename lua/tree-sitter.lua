@@ -1,6 +1,5 @@
 local nvim_treesitter_status, nvim_treesitter = pcall(require, 'nvim-treesitter.configs')
 if not nvim_treesitter_status then
-  vim.notify('nvim-treesitter not found')
   return
 end
 
@@ -12,8 +11,15 @@ nvim_treesitter.setup {
     enable = true,
     additional_vim_regex_highlighting = false
   },
+  autopairs = {
+	enable = true,
+  },
   -- 启用基于Treesitter的代码格式化(=) . NOTE: This is an experimental feature.
   indent = {
-    enable = true
-  }
+    enable = true,
+  },
+  context_commentstring = {
+	enable = true,
+	enable_autocmd = false,
+  },
 }

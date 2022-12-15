@@ -12,14 +12,12 @@ nvim_treesitter.setup {
     additional_vim_regex_highlighting = false
   },
   autopairs = {
-	enable = true,
+	  enable = true,
   },
   -- 启用基于Treesitter的代码格式化(=) . NOTE: This is an experimental feature.
-  indent = {
-    enable = true,
-  },
+  indent = { enable = true, disable = { "python", "css" } },
   context_commentstring = {
-	enable = true,
-	enable_autocmd = false,
+    enable = true,
+    enable_autocmd = false,
   },
 }

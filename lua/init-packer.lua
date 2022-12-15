@@ -1,3 +1,11 @@
+-- 保存文件时自动加载
+vim.cmd [[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerSync
+  augroup end
+]]
+
 local packer = require('packer')
 
 packer.startup({

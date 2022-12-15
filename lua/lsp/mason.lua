@@ -13,9 +13,6 @@ mason.setup()
 mason_lspconfig.setup({
    ensure_installed = { 
     "sumneko_lua",
-    "tsserver",
-    "html",
-    "cssls",
     "pyright",
     "clangd"
   }

@@ -5,7 +5,7 @@ end
 
 nvim_treesitter.setup {
   -- 安装 language parser
-  ensure_installed = {"css", "typescript","javascript", "lua", "python", "c", "cpp"},
+  ensure_installed = {"lua", "python", "c", "cpp"},
   -- 启用代码高亮功能
   highlight = {
     enable = true,

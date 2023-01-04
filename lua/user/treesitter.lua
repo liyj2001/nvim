@@ -9,7 +9,7 @@ if not status_ok then
 end
 
 configs.setup({
-ensure_installed = { "lua", "python", "c", "cpp"}, -- 安装 language parser
+ensure_installed = { "lua", "python"}, -- 安装 language parser
   -- ensure_installed = "all", -- one of "all" or a list of languages
 	ignore_install = { "" }, -- List of parsers to ignore installing
 	sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)

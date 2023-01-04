@@ -65,3 +65,7 @@ keymap("n", "ww", ":w<CR>", opts)
 
 -- 全文格式化代码
 keymap("n", "<leadner>fm", "gg=G<C-o>", opts)
+
+-- 代码运行
+keymap('n', '<leader>r', ':RunCode<CR>', opts)
+keymap('n', '<leader>rf', ':RunFile<CR>', opts)

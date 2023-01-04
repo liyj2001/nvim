@@ -114,9 +114,6 @@ cmp.setup({
 		{ name = "buffer" },
 		{ name = "path" },
 	},
-  flags = {
-    debounce_text_changes = 150
-  },
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
 		select = false,

@@ -69,9 +69,3 @@ keymap("n", "<leadner>fm", "gg=G<C-o>", opts)
 -- 代码运行
 keymap('n', '<leader>r', ':RunCode<CR>', opts)
 keymap('n', '<leader>rf', ':RunFile<CR>', opts)
-
-local builtin = require('telescope.builtin')
-keymap('n', '<leader>ff', builtin.find_files, {})
-keymap('n', '<leader>fg', builtin.live_grep, {})
-keymap('n', '<leader>fb', builtin.buffers, {})
-keymap('n', '<leader>fh', builtin.help_tags, {})

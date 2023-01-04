@@ -82,8 +82,11 @@ vim.opt.undofile = true
 vim.opt.updatetime = 300
 -- 补全设置
 vim.opt.completeopt = { "menuone", "noselect" }
+-- 当文件被外部程序修改时，自动加载
+vim.o.autoread = true
+vim.bo.autoread = true
+-- 禁止折行
+vim.wo.wrap = false
 
-
--- 主题
+-- 暗色主题
 vim.opt.background = "dark" -- or "light" for light mode
-vim.cmd([[colorscheme gruvbox]])

@@ -1,12 +1,15 @@
-require('base')
-require('maps')
-require('init-packer')
-require('file-tree')
-require('buffer-line')
-require('tree-sitter')
-require('conf.cmp')
-require('lsp.mason')
-require('lsp.lspconfig')
-require('conf.autopair')
-require('conf.indentline')
-require('conf.null-ls')
+require "user.impatient"
+require "user.options"
+require "user.keymaps"
+require "user.plugins"
+require "user.autocommands"
+require "user.colorscheme"
+require "user.cmp"
+require "user.treesitter"
+require "user.autopairs"
+require "user.nvim-tree"
+require "user.bufferline"
+require "user.toggleterm"
+require "user.illuminate"
+require "user.indentline"
+require "user.lsp"

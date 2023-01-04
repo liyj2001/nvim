@@ -1,20 +1,19 @@
-local cmp_status_ok, cmp = pcall(require, 'cmp')
+local cmp_status_ok, cmp = pcall(require, "cmp")
 if not cmp_status_ok then
-  return
+	return
 end
 
-local snip_status_ok, luasnip = pcall(require, 'luasnip')
+local snip_status_ok, luasnip = pcall(require, "luasnip")
 if not snip_status_ok then
-  return
+	return
 end
+
+require("luasnip/loaders/from_vscode").lazy_load()
 
 local check_backspace = function()
 	local col = vim.fn.col(".") - 1
 	return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
 end
-
--- load freindly-snippets
-require('luasnip.loaders.from_vscode').lazy_load()
 
 local kind_icons = {
 	Text = "",
@@ -44,12 +43,13 @@ local kind_icons = {
 	TypeParameter = "",
 }
 
-cmp.setup {
+cmp.setup({
 	snippet = {
 		expand = function(args)
-		  luasnip.lsp_expand(args.body)
+			luasnip.lsp_expand(args.body) -- For `luasnip` users.
 		end,
 	},
+
 	mapping = cmp.mapping.preset.insert({
 		["<C-k>"] = cmp.mapping.select_prev_item(),
 		["<C-j>"] = cmp.mapping.select_next_item(),
@@ -92,7 +92,6 @@ cmp.setup {
 			"s",
 		}),
 	}),
-	-- 显示类型图标 
 	formatting = {
 		fields = { "kind", "abbr", "menu" },
 		format = function(entry, vim_item)
@@ -109,15 +108,15 @@ cmp.setup {
 		end,
 	},
 	sources = {
-		{name = "nvim_lsp"},
-		{name = "luasnip"},
+		{ name = "nvim_lsp" },
 		{ name = "nvim_lua" },
-		{name = "buffer"},
-		{name = "path"},
+		{ name = "luasnip" },
+		{ name = "buffer" },
+		{ name = "path" },
 	},
-	flags = {
-		debounce_text_changes = 150
-	},
+  flags = {
+    debounce_text_changes = 150
+  },
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
 		select = false,
@@ -127,29 +126,6 @@ cmp.setup {
 		documentation = cmp.config.window.bordered(),
 	},
 	experimental = {
-		ghost_text = false,
-	}
-}
-
-cmp.setup.cmdline('/',{
-	mapping = cmp.mapping.preset.cmdline(),
-	sources = {
-		{ name = 'buffer' }
-	}
-})
-
-cmp.setup.cmdline('?', {
-  mapping = cmp.mapping.preset.cmdline(),
-  sources = {
-    { name = 'buffer' }
-  }
-})
-
-cmp.setup.cmdline(':',{
-	mapping = cmp.mapping.preset.cmdline(),
-	sources = cmp.config.sources({
-		{ name = 'cmdline' }
-	}, {
-		{ name = 'path' }
-	})
+		ghost_text = true,
+	},
 })

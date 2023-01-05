@@ -53,8 +53,10 @@ keymap("n", "<A-m>", ":NvimTreeToggle<CR>", opt)
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
 
 -- 退出与保存
+-- 退出
+keymap("n", "qq", ":q<CR>", opts)
 -- 强制退出
-keymap("n", "qq", ":q!<CR>", opts)
+keymap("n", "qqq", ":q!<CR>", opts)
 -- 保存文件
 keymap("n", "ww", ":w<CR>", opts)
 

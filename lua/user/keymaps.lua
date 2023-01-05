@@ -63,3 +63,6 @@ keymap("n", "<leadner>fm", "gg=G<C-o>", opts)
 
 -- 代码运行
 keymap('n', '<leader>r', ':RunCode<CR>', opts)
+
+-- git
+keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)

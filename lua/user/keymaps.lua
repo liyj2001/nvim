@@ -49,18 +49,13 @@ keymap("v", ">", ">gv", opts)
 -- nvim-tree
 keymap("n", "<A-m>", ":NvimTreeToggle<CR>", opt)
 
--- NvimTree
-keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
-
--- Lsp
+-- Lsp格式化
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
 
 -- 退出与保存
--- 退出
-keymap("n", "q", ":qa<CR>", opts)
 -- 强制退出
 keymap("n", "qq", ":q!<CR>", opts)
--- 保存
+-- 保存文件
 keymap("n", "ww", ":w<CR>", opts)
 
 -- 全文格式化代码

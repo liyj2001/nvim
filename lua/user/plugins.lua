@@ -85,9 +85,6 @@ return packer.startup(function(use)
   -- 运行python代码
   use { 'CRAG666/code_runner.nvim', requires = 'nvim-lua/plenary.nvim' }
 
-  -- git
-  use { "lewis6991/gitsigns.nvim", commit = "f98c85e7c3d65a51f45863a34feb4849c82f240f" }
-
   -- 修改plugins文件内容后自动执行PackerSync命令
   if PACKER_BOOTSTRAP then
     require("packer").sync()

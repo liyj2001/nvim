@@ -85,8 +85,7 @@ return packer.startup(function(use)
   -- 运行python代码
   use { 'CRAG666/code_runner.nvim', requires = 'nvim-lua/plenary.nvim' }
 
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
+  -- 修改plugins文件内容后自动执行PackerSync命令
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
